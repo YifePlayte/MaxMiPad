@@ -1,0 +1,16 @@
+<resources>
+    <string name="xposed_desc">为小米平板的输入系统提供一些增强功能</string>
+    <string name="warning">警告</string>
+    <string name="not_support">您似乎正在使用过时的 LSPosed 版本或 LSPosed 未激活，请更新 LSPosed 或者激活后再试。</string>
+    <string name="no_magic_pointer">关闭Magic Pointer</string>
+    <string name="no_magic_pointer_tips">关掉MIUI for Pad的圆形鼠标，恢复为安卓原生鼠标指针。</string>
+    <string name="restore_esc_tips">恢复被MIUI强映射为“返回”功能的ESC键</string>
+    <string name="remove_stylus_bluetooth_restriction">去除触控笔蓝牙限制</string>
+    <string name="reboot_tips">确定重启系统？</string>
+    <string name="cancel">取消</string>
+    <string name="reboot_system">重启系统</string>
+    <string name="done">确定</string>
+    <string name="reboot">重启</string>
+    <string name="remove_stylus_bluetooth_restriction_tips">无需连接小米灵感触控笔的蓝牙即可使用兼容的触控笔</string>
+    <string name="restore_esc">恢复ESC键功能</string>
+</resources>
