@@ -11,7 +11,7 @@
     <string name="reboot_system">重启系统</string>
     <string name="done">确定</string>
     <string name="reboot">重启</string>
-    <string name="remove_stylus_bluetooth_restriction_tips">无需连接小米灵感触控笔的蓝牙即可使用兼容的触控笔</string>
+    <string name="remove_stylus_bluetooth_restriction_tips">无需连接小米灵感触控笔的蓝牙即可使用兼容的触控笔。</string>
     <string name="restore_esc">恢复ESC键功能</string>
     <string name="ignore_stylus_key_gesture">忽略触控笔按键手势</string>
     <string name="ignore_stylus_key_gesture_tips">忽略触控笔按键的长按手势。这将强制启用“去除触控笔蓝牙限制”的功能。</string>

@@ -9,7 +9,7 @@
     <string name="restore_esc">Restore ESC function</string>
     <string name="restore_esc_tips">Restore ESC function which has been hard-mapped to \"back\" function by MIUI.</string>
     <string name="remove_stylus_bluetooth_restriction">Remove stylus bluetooth restriction</string>
-    <string name="remove_stylus_bluetooth_restriction_tips">Make all compatible stylus work without the need of bluetooth connection to official pen.</string>
+    <string name="remove_stylus_bluetooth_restriction_tips">Make all compatible stylus work without the need of bluetooth connection to official stylus.</string>
     <string name="reboot">Reboot</string>
     <string name="reboot_tips">Are you sure to reboot?</string>
     <string name="cancel">Cancel</string>
