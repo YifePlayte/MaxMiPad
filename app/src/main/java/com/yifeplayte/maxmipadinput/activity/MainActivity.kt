@@ -57,6 +57,13 @@ class MainActivity : MIUIActivity() {
                     ),
                     SwitchV("remove_stylus_bluetooth_restriction", true)
                 )
+                TextSummaryWithSwitch(
+                    TextSummaryV(
+                        textId = R.string.ignore_stylus_key_gesture,
+                        tipsId = R.string.ignore_stylus_key_gesture_tips
+                    ),
+                    SwitchV("ignore_stylus_key_gesture", true)
+                )
                 Line()
                 TitleText(textId = R.string.reboot)
                 TextA(

@@ -6,6 +6,7 @@ import com.github.kyuubiran.ezxhelper.utils.Log.logexIfThrow
 import com.yifeplayte.maxmipadinput.hook.hooks.BaseHook
 import com.yifeplayte.maxmipadinput.hook.hooks.android.MiuiMagicPointerUtils
 import com.yifeplayte.maxmipadinput.hook.hooks.android.MiuiStylusDeviceListener
+import com.yifeplayte.maxmipadinput.hook.hooks.android.SupportStylusGesture
 import com.yifeplayte.maxmipadinput.hook.hooks.android.SwitchPadMode
 import com.yifeplayte.maxmipadinput.util.Utils
 import de.robv.android.xposed.IXposedHookLoadPackage
@@ -34,6 +35,9 @@ class MainHook : IXposedHookLoadPackage {
                     }
                     if (Utils.getBoolean("remove_stylus_bluetooth_restriction", true)) {
                         initHooks(MiuiStylusDeviceListener)
+                    }
+                    if (Utils.getBoolean("ignore_stylus_key_gesture", true)) {
+                        initHooks(SupportStylusGesture)
                     }
                 }
             }
