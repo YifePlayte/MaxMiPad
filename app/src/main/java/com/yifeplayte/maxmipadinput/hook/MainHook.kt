@@ -4,10 +4,7 @@ import com.github.kyuubiran.ezxhelper.init.EzXHelperInit
 import com.github.kyuubiran.ezxhelper.utils.Log
 import com.github.kyuubiran.ezxhelper.utils.Log.logexIfThrow
 import com.yifeplayte.maxmipadinput.hook.hooks.BaseHook
-import com.yifeplayte.maxmipadinput.hook.hooks.android.MiuiMagicPointerUtils
-import com.yifeplayte.maxmipadinput.hook.hooks.android.MiuiStylusDeviceListener
-import com.yifeplayte.maxmipadinput.hook.hooks.android.SupportStylusGesture
-import com.yifeplayte.maxmipadinput.hook.hooks.android.SwitchPadMode
+import com.yifeplayte.maxmipadinput.hook.hooks.android.*
 import com.yifeplayte.maxmipadinput.util.Utils
 import de.robv.android.xposed.IXposedHookLoadPackage
 import de.robv.android.xposed.callbacks.XC_LoadPackage
@@ -37,7 +34,8 @@ class MainHook : IXposedHookLoadPackage {
                         initHooks(MiuiStylusDeviceListener)
                     }
                     if (Utils.getBoolean("ignore_stylus_key_gesture", true)) {
-                        initHooks(SupportStylusGesture)
+                        // initHooks(SupportStylusGesture)
+                        initHooks(IsPageKeyEnable)
                     }
                 }
             }

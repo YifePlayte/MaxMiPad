@@ -15,5 +15,6 @@
     <string name="cancel">Cancel</string>
     <string name="reboot_system">Reboot system</string>
     <string name="ignore_stylus_key_gesture">Ignore stylus buttons gesture</string>
-    <string name="ignore_stylus_key_gesture_tips">Ignore the long press gesture on the stylus buttons. This will force the \"Remove stylus bluetooth restriction\" function enabled.</string>
+<!--    <string name="ignore_stylus_key_gesture_tips">Ignore the long press gesture on the stylus buttons. This will force the \"Remove stylus bluetooth restriction\" function enabled.</string>-->
+    <string name="ignore_stylus_key_gesture_tips">Ignore the long press gesture on the stylus buttons.</string>
 </resources>
