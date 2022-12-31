@@ -29,6 +29,7 @@ class MainHook : IXposedHookLoadPackage {
                     }
                     if (Utils.getBoolean("restore_esc", true)) {
                         initHooks(SwitchPadMode)
+                        initHooks(SetPadMode)
                     }
                     if (Utils.getBoolean("remove_stylus_bluetooth_restriction", true)) {
                         initHooks(MiuiStylusDeviceListener)
