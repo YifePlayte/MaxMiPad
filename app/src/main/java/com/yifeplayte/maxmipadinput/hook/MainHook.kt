@@ -36,7 +36,7 @@ class MainHook : IXposedHookLoadPackage {
                     }
                     if (Utils.getBoolean("ignore_stylus_key_gesture", true)) {
                         // initHooks(SupportStylusGesture)
-                        initHooks(IsPageKeyEnable)
+                        initHooks(MiuiStylusPageKeyListener)
                     }
                 }
             }
