@@ -50,6 +50,7 @@ object MiuiStylusDeviceListener : BaseHook() {
             XposedBridge.log("MaxMiPadInput: Hook MiuiStylusDeviceListener success!")
         } catch (e: Throwable) {
             XposedBridge.log("MaxMiPadInput: Hook MiuiStylusDeviceListener failed!")
+            XposedBridge.log(e)
         }
     }
 }

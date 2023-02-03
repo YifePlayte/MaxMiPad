@@ -48,6 +48,7 @@ object MiuiStylusPageKeyListener : BaseHook() {
             XposedBridge.log("MaxMiPadInput: Hook shouldInterceptKey success!")
         } catch (e: Throwable) {
             XposedBridge.log("MaxMiPadInput: Hook shouldInterceptKey failed!")
+            XposedBridge.log(e)
         }
     }
 }

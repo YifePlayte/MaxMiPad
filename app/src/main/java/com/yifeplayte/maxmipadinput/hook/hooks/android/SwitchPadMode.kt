@@ -16,6 +16,7 @@ object SwitchPadMode : BaseHook() {
             XposedBridge.log("MaxMiPadInput: Hook switchPadMode success!")
         } catch (e: Throwable) {
             XposedBridge.log("MaxMiPadInput: Hook switchPadMode failed!")
+            XposedBridge.log(e)
         }
     }
 }

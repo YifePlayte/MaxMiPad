@@ -31,6 +31,7 @@ object SupportStylusGesture : BaseHook() {
             XposedBridge.log("MaxMiPadInput: Hook supportStylusGesture success!")
         } catch (e: Throwable) {
             XposedBridge.log("MaxMiPadInput: Hook supportStylusGesture failed!")
+            XposedBridge.log(e)
         }
     }
 }
