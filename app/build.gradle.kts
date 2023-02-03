@@ -20,6 +20,9 @@ android {
             isMinifyEnabled = true
             proguardFiles("proguard-rules.pro")
         }
+        named("debug") {
+            versionNameSuffix = "-debug-" + org.gradle.internal.time.Time.currentTimeMillis()
+        }
     }
 
     androidResources {
