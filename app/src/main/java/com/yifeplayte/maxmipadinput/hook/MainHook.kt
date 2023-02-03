@@ -26,6 +26,7 @@ class MainHook : IXposedHookLoadPackage {
                 "android" -> {
                     if (Utils.getBoolean("no_magic_pointer", true)) {
                         initHooks(MiuiMagicPointerUtils)
+                        initHooks(SystemServerImpl)
                     }
                     if (Utils.getBoolean("restore_esc", true)) {
                         initHooks(SwitchPadMode)
