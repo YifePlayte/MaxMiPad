@@ -16,5 +16,5 @@ dependencyResolutionManagement {
 
 include(":app")
 include(":blockmiui")
-rootProject.name = "MaxMiPadInput"
+rootProject.name = "MaxMiPad"
 
