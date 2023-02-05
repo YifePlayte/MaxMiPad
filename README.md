@@ -1,6 +1,6 @@
 # MaxMiPad
 
-<a href="https://github.com/Xposed-Modules-Repo/com.yifeplayte.maxmipadinput/releases"><img alt="GitHub all releases" src="https://img.shields.io/github/downloads/Xposed-Modules-Repo/com.yifeplayte.maxmipadinput/total?label=Downloads"></a> <a href="https://github.com/YifePlayte/MaxMiPadInput/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/YifePlayte/MaxMiPadInput"></a> <a href="https://github.com/YifePlayte/MaxMiPadInput/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/YifePlayte/MaxMiPadInput"></a> <a href="https://github.com/YifePlayte/MaxMiPadInput/blob/main/LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/YifePlayte/MaxMiPadInput"></a>
+<a href="https://github.com/Xposed-Modules-Repo/com.yifeplayte.maxmipadinput/releases"><img alt="GitHub all releases" src="https://img.shields.io/github/downloads/Xposed-Modules-Repo/com.yifeplayte.maxmipadinput/total?label=Downloads"></a> <a href="https://github.com/YifePlayte/MaxMiPad/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/YifePlayte/MaxMiPad"></a> <a href="https://github.com/YifePlayte/MaxMiPad/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/YifePlayte/MaxMiPad"></a> <a href="https://github.com/YifePlayte/MaxMiPad/blob/main/LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/YifePlayte/MaxMiPad"></a>
 
 为小米平板提供一些增强功能  
 Provide some enhancements to Mi Pad  
@@ -25,4 +25,4 @@ Provide some enhancements to Mi Pad
 ---
 
 ### License
-[GNU General Public License v3.0](https://github.com/YifePlayte/MaxMiPadInput/blob/main/LICENSE)
+[GNU General Public License v3.0](https://github.com/YifePlayte/MaxMiPad/blob/main/LICENSE)
