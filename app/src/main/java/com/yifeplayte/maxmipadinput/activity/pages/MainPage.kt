@@ -1,5 +1,7 @@
 package com.yifeplayte.maxmipadinput.activity.pages
 
+import android.view.View
+import cn.fkj233.ui.activity.MIUIActivity
 import cn.fkj233.ui.activity.annotation.BMMainPage
 import cn.fkj233.ui.activity.data.BasePage
 import cn.fkj233.ui.activity.view.SwitchV
@@ -11,6 +13,7 @@ import com.yifeplayte.maxmipadinput.util.Utils
 @BMMainPage(titleId = R.string.app_name)
 class MainPage : BasePage() {
     override fun onCreate() {
+        TitleText(textId = R.string.input)
         TextSummaryWithSwitch(
             TextSummaryV(
                 textId = R.string.no_magic_pointer,
@@ -38,6 +41,36 @@ class MainPage : BasePage() {
                 tipsId = R.string.ignore_stylus_key_gesture_tips
             ),
             SwitchV("ignore_stylus_key_gesture", true)
+        )
+        Line()
+        TitleText(textId = R.string.screen)
+        val bindingDisableFixedOrientation =
+            GetDataBinding({
+                MIUIActivity.safeSP.getBoolean("disable_fixed_orientation", true)
+            }) { view, flags, data ->
+                when (flags) {
+                    1 -> view.visibility = if (data as Boolean) View.VISIBLE else View.GONE
+                }
+            }
+        TextSummaryWithSwitch(
+            TextSummaryV(
+                textId = R.string.disable_fixed_orientation,
+                tipsId = R.string.disable_fixed_orientation_tips
+            ),
+            SwitchV(
+                key = "disable_fixed_orientation",
+                defValue = true,
+                dataBindingSend = bindingDisableFixedOrientation.bindingSend
+            )
+        )
+        TextSummaryArrow(
+            TextSummaryV(
+                textId = R.string.disable_fixed_orientation_scope,
+                tipsId = R.string.disable_fixed_orientation_scope_tips
+            ) {
+                showFragment("DisableFixedOrientationPage")
+            },
+            dataBindingRecv = bindingDisableFixedOrientation.getRecv(1)
         )
         Line()
         TitleText(textId = R.string.reboot)

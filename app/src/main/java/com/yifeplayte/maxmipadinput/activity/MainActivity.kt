@@ -5,6 +5,7 @@ import android.os.Bundle
 import cn.fkj233.ui.activity.MIUIActivity
 import cn.fkj233.ui.dialog.MIUIDialog
 import com.yifeplayte.maxmipadinput.R
+import com.yifeplayte.maxmipadinput.activity.pages.DisableFixedOrientationPage
 import com.yifeplayte.maxmipadinput.activity.pages.MainPage
 import kotlin.system.exitProcess
 
@@ -34,5 +35,6 @@ class MainActivity : MIUIActivity() {
     init {
         activity = this
         registerPage(MainPage::class.java)
+        registerPage(DisableFixedOrientationPage::class.java)
     }
 }

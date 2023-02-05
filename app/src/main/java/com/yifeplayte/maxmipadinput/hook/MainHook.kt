@@ -39,6 +39,9 @@ class MainHook : IXposedHookLoadPackage {
                         // initHooks(SupportStylusGesture)
                         initHooks(MiuiStylusPageKeyListener)
                     }
+                    if (Utils.getBoolean("disable_fixed_orientation", true)) {
+                        initHooks(MiuiFixedOrientationController)
+                    }
                 }
             }
         }
