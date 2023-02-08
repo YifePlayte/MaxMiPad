@@ -9,6 +9,7 @@ import cn.fkj233.ui.activity.view.SwitchV
 import cn.fkj233.ui.activity.view.TextSummaryV
 import cn.fkj233.ui.activity.view.TextSummaryWithSwitchV
 import com.yifeplayte.maxmipadinput.R
+import com.yifeplayte.maxmipadinput.utils.SharedPreferences.putStringSet
 import io.github.ranlee1.jpinyin.PinyinFormat
 import io.github.ranlee1.jpinyin.PinyinHelper
 import java.util.*
@@ -64,12 +65,10 @@ class DisableFixedOrientationPage : BasePage() {
                             } else {
                                 shouldDisableFixedOrientationList.remove(i.packageName)
                             }
-                            val editor = MIUIActivity.safeSP.mSP?.edit()
-                            editor?.putStringSet(
+                            MIUIActivity.safeSP.mSP?.putStringSet(
                                 "should_disable_fixed_orientation_list",
                                 shouldDisableFixedOrientationList.toSet()
                             )
-                            editor?.apply()
                         }
                     )
                 )

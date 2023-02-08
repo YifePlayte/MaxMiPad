@@ -8,7 +8,7 @@ import cn.fkj233.ui.activity.view.SwitchV
 import cn.fkj233.ui.activity.view.TextSummaryV
 import cn.fkj233.ui.dialog.MIUIDialog
 import com.yifeplayte.maxmipadinput.R
-import com.yifeplayte.maxmipadinput.util.Utils
+import com.yifeplayte.maxmipadinput.utils.Terminal
 
 @BMMainPage(titleId = R.string.app_name)
 class MainPage : BasePage() {
@@ -85,7 +85,7 @@ class MainPage : BasePage() {
                         dismiss()
                     }
                     setRButton(R.string.done) {
-                        Utils.exec("/system/bin/sync;/system/bin/svc power reboot || reboot")
+                        Terminal.exec("/system/bin/sync;/system/bin/svc power reboot || reboot")
                     }
                 }.show()
             }

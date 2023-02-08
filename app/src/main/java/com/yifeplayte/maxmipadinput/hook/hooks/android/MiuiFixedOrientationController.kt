@@ -3,14 +3,14 @@ package com.yifeplayte.maxmipadinput.hook.hooks.android
 import com.github.kyuubiran.ezxhelper.utils.findAllMethods
 import com.github.kyuubiran.ezxhelper.utils.hookBefore
 import com.yifeplayte.maxmipadinput.hook.hooks.BaseHook
-import com.yifeplayte.maxmipadinput.util.Utils
+import com.yifeplayte.maxmipadinput.utils.XSharedPreferences
 import de.robv.android.xposed.XposedBridge
 
 object MiuiFixedOrientationController : BaseHook() {
     override fun init() {
         try {
             val shouldDisableFixedOrientationList =
-                Utils.getStringSet("should_disable_fixed_orientation_list", mutableSetOf())
+                XSharedPreferences.getStringSet("should_disable_fixed_orientation_list", mutableSetOf())
             findAllMethods("com.android.server.wm.MiuiFixedOrientationController") {
                 name == "shouldDisableFixedOrientation"
             }.hookBefore { param ->

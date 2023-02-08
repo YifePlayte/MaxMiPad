@@ -1,7 +1,8 @@
 package com.yifeplayte.maxmipadinput.hook.hooks.android
 
 import android.os.Build
-import com.github.kyuubiran.ezxhelper.utils.*
+import com.github.kyuubiran.ezxhelper.utils.findMethod
+import com.github.kyuubiran.ezxhelper.utils.hookReturnConstant
 import com.yifeplayte.maxmipadinput.hook.hooks.BaseHook
 import de.robv.android.xposed.XposedBridge
 

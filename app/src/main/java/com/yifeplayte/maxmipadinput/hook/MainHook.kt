@@ -5,7 +5,7 @@ import com.github.kyuubiran.ezxhelper.utils.Log
 import com.github.kyuubiran.ezxhelper.utils.Log.logexIfThrow
 import com.yifeplayte.maxmipadinput.hook.hooks.BaseHook
 import com.yifeplayte.maxmipadinput.hook.hooks.android.*
-import com.yifeplayte.maxmipadinput.util.Utils
+import com.yifeplayte.maxmipadinput.utils.XSharedPreferences
 import de.robv.android.xposed.IXposedHookLoadPackage
 import de.robv.android.xposed.callbacks.XC_LoadPackage
 
@@ -24,22 +24,22 @@ class MainHook : IXposedHookLoadPackage {
             // Init hooks
             when (lpparam.packageName) {
                 "android" -> {
-                    if (Utils.getBoolean("no_magic_pointer", true)) {
+                    if (XSharedPreferences.getBoolean("no_magic_pointer", true)) {
                         initHooks(MiuiMagicPointerUtils)
                         initHooks(SystemServerImpl)
                     }
-                    if (Utils.getBoolean("restore_esc", true)) {
+                    if (XSharedPreferences.getBoolean("restore_esc", true)) {
                         initHooks(SwitchPadMode)
                         initHooks(SetPadMode)
                     }
-                    if (Utils.getBoolean("remove_stylus_bluetooth_restriction", true)) {
+                    if (XSharedPreferences.getBoolean("remove_stylus_bluetooth_restriction", true)) {
                         initHooks(MiuiStylusDeviceListener)
                     }
-                    if (Utils.getBoolean("ignore_stylus_key_gesture", true)) {
+                    if (XSharedPreferences.getBoolean("ignore_stylus_key_gesture", true)) {
                         // initHooks(SupportStylusGesture)
                         initHooks(MiuiStylusPageKeyListener)
                     }
-                    if (Utils.getBoolean("disable_fixed_orientation", true)) {
+                    if (XSharedPreferences.getBoolean("disable_fixed_orientation", true)) {
                         initHooks(MiuiFixedOrientationController)
                     }
                 }
