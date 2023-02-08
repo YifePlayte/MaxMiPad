@@ -55,4 +55,20 @@ object Utils {
         return prefs.getBoolean(key, defValue)
     }
 
+    fun getString(key: String, defValue: String): String {
+        val prefs = XSharedPreferences(BuildConfig.APPLICATION_ID, "config")
+        if (prefs.hasFileChanged()) {
+            prefs.reload()
+        }
+        return prefs.getString(key, defValue) ?: defValue
+    }
+
+    fun getStringSet(key: String, defValue: MutableSet<String>): MutableSet<String> {
+        val prefs = XSharedPreferences(BuildConfig.APPLICATION_ID, "config")
+        if (prefs.hasFileChanged()) {
+            prefs.reload()
+        }
+        return prefs.getStringSet(key, defValue) ?: defValue
+    }
+
 }

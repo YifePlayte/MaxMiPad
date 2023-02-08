@@ -1,6 +1,7 @@
 package com.yifeplayte.maxmipadinput.activity.pages
 
 import android.content.pm.ApplicationInfo
+import cn.fkj233.ui.activity.MIUIActivity
 import cn.fkj233.ui.activity.annotation.BMPage
 import cn.fkj233.ui.activity.data.BasePage
 import cn.fkj233.ui.activity.fragment.MIUIFragment
@@ -22,7 +23,6 @@ class DisableFixedOrientationPage : BasePage() {
         fragment.showLoading()
         try {
             val packagesInfo = activity.packageManager.getInstalledApplications(0)
-            packagesInfo.sortBy { it.loadLabel(activity.packageManager).toString() }
             packagesInfo.sortWith { u1, u2 ->
                 return@sortWith PinyinHelper.convertToPinyinString(
                     u1.loadLabel(activity.packageManager).toString(),
@@ -42,7 +42,35 @@ class DisableFixedOrientationPage : BasePage() {
                         TextSummaryV(
                             text = i.loadLabel(activity.packageManager).toString(),
                             tips = i.packageName
-                        ), SwitchV("disable_fixed_orientation_" + i.packageName)
+                        ), SwitchV("disable_fixed_orientation_" + i.packageName) { switchValue ->
+                            val packagesInfo1 =
+                                MIUIActivity.activity.packageManager.getInstalledApplications(0)
+                            val shouldDisableFixedOrientationList = mutableListOf<String>()
+                            for (j in packagesInfo1) {
+                                if ((j.flags and ApplicationInfo.FLAG_SYSTEM) != 1) {
+                                    if (MIUIActivity.safeSP.getBoolean(
+                                            "disable_fixed_orientation_" + j.packageName,
+                                            false
+                                        )
+                                    ) {
+                                        shouldDisableFixedOrientationList.add(j.packageName)
+                                    }
+                                }
+                            }
+                            if (switchValue) {
+                                if (!shouldDisableFixedOrientationList.contains(i.packageName)) {
+                                    shouldDisableFixedOrientationList.add(i.packageName)
+                                }
+                            } else {
+                                shouldDisableFixedOrientationList.remove(i.packageName)
+                            }
+                            val editor = MIUIActivity.safeSP.mSP?.edit()
+                            editor?.putStringSet(
+                                "should_disable_fixed_orientation_list",
+                                shouldDisableFixedOrientationList.toSet()
+                            )
+                            editor?.apply()
+                        }
                     )
                 )
             }

@@ -21,5 +21,5 @@
     <string name="disable_fixed_orientation">禁用固定屏幕方向</string>
     <string name="disable_fixed_orientation_tips">针对部分应用禁用横屏优化</string>
     <string name="disable_fixed_orientation_scope">禁用固定屏幕方向作用域</string>
-    <string name="disable_fixed_orientation_scope_tips">即刻生效</string>
+    <string name="disable_fixed_orientation_scope_tips">重启后生效，按下返回保存配置</string>
 </resources>

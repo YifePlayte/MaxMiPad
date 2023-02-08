@@ -9,14 +9,12 @@ import de.robv.android.xposed.XposedBridge
 object MiuiFixedOrientationController : BaseHook() {
     override fun init() {
         try {
+            val shouldDisableFixedOrientationList =
+                Utils.getStringSet("should_disable_fixed_orientation_list", mutableSetOf())
             findAllMethods("com.android.server.wm.MiuiFixedOrientationController") {
                 name == "shouldDisableFixedOrientation"
             }.hookBefore { param ->
-                if (Utils.getBoolean(
-                        "disable_fixed_orientation_" + param.args[0] as String,
-                        false
-                    )
-                ) {
+                if (param.args[0] in shouldDisableFixedOrientationList) {
                     param.result = true
                 }
             }
