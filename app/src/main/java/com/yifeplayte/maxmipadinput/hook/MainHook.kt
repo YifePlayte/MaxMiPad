@@ -36,7 +36,6 @@ class MainHook : IXposedHookLoadPackage {
                         initHooks(MiuiStylusDeviceListener)
                     }
                     if (XSharedPreferences.getBoolean("ignore_stylus_key_gesture", true)) {
-                        // initHooks(SupportStylusGesture)
                         initHooks(MiuiStylusPageKeyListener)
                     }
                     if (XSharedPreferences.getBoolean("disable_fixed_orientation", true)) {

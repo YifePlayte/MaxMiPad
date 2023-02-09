@@ -14,18 +14,14 @@ object MiuiStylusDeviceListener : BaseHook() {
                     val mTouchFeature = findMethod(ITouchFeature) {
                         name == "getInstance"
                     }.invoke(null)
-                    findMethod(ITouchFeature) {
-                        name == "setTouchMode" && paramCount == 3
-                    }.invoke(mTouchFeature, 0, 20, 1)
+                    mTouchFeature?.invokeMethod("setTouchMode", args(0, 20, 1), argTypes(Int::class.java,Int::class.java,Int::class.java))
                 }
                 findAllMethods("com.miui.server.input.stylus.MiuiStylusDeviceListener") { true }.hookAfter {
                     val ITouchFeature = loadClass("miui.util.ITouchFeature")
                     val mTouchFeature = findMethod(ITouchFeature) {
                         name == "getInstance"
                     }.invoke(null)
-                    findMethod(ITouchFeature) {
-                        name == "setTouchMode" && paramCount == 3
-                    }.invoke(mTouchFeature, 0, 20, 1)
+                    mTouchFeature?.invokeMethod("setTouchMode", args(0, 20, 1), argTypes(Int::class.java,Int::class.java,Int::class.java))
                 }
             } else {
                 findAllConstructors("com.miui.server.stylus.MiuiStylusDeviceListener") { true }.hookAfter {
@@ -33,18 +29,14 @@ object MiuiStylusDeviceListener : BaseHook() {
                     val mTouchFeature = findMethod(ITouchFeature) {
                         name == "getInstance"
                     }.invoke(null)
-                    findMethod(ITouchFeature) {
-                        name == "setTouchMode" && paramCount == 3
-                    }.invoke(mTouchFeature, 0, 20, 1)
+                    mTouchFeature?.invokeMethod("setTouchMode", args(0, 20, 1), argTypes(Int::class.java,Int::class.java,Int::class.java))
                 }
                 findAllMethods("com.miui.server.stylus.MiuiStylusDeviceListener") { true }.hookAfter {
                     val ITouchFeature = loadClass("miui.util.ITouchFeature")
                     val mTouchFeature = findMethod(ITouchFeature) {
                         name == "getInstance"
                     }.invoke(null)
-                    findMethod(ITouchFeature) {
-                        name == "setTouchMode" && paramCount == 3
-                    }.invoke(mTouchFeature, 0, 20, 1)
+                    mTouchFeature?.invokeMethod("setTouchMode", args(0, 20, 1), argTypes(Int::class.java,Int::class.java,Int::class.java))
                 }
             }
             XposedBridge.log("MaxMiPadInput: Hook MiuiStylusDeviceListener success!")
