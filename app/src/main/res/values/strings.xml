@@ -22,4 +22,6 @@
     <string name="disable_fixed_orientation_tips">Disable some app\'s fixed orientation</string>
     <string name="disable_fixed_orientation_scope">Disable fixed orientation scope</string>
     <string name="disable_fixed_orientation_scope_tips">Take effect after reboot</string>
+    <string name="set_gesture_need_finger_num_to_4">Swap the number of fingers required for gestures</string>
+    <string name="set_gesture_need_finger_num_to_4_tips">Change screenshot gesture, partial screenshot gesture, and horizontal split screen gesture to be triggered by four fingers, and switch apps gesture to be triggered by three fingers</string>
 </resources>

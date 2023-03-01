@@ -22,4 +22,6 @@
     <string name="disable_fixed_orientation_tips">针对部分应用禁用横屏优化</string>
     <string name="disable_fixed_orientation_scope">禁用固定屏幕方向作用域</string>
     <string name="disable_fixed_orientation_scope_tips">重启后生效，按下返回保存配置</string>
+    <string name="set_gesture_need_finger_num_to_4">交换手势所需的手指数量</string>
+    <string name="set_gesture_need_finger_num_to_4_tips">将三指截屏、三指长按区域截屏、三指横向分屏手势改为四指触发，切换应用手势改为三指触发</string>
 </resources>

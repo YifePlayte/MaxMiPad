@@ -5,6 +5,7 @@ import com.github.kyuubiran.ezxhelper.utils.Log
 import com.github.kyuubiran.ezxhelper.utils.Log.logexIfThrow
 import com.yifeplayte.maxmipadinput.hook.hooks.BaseHook
 import com.yifeplayte.maxmipadinput.hook.hooks.android.*
+import com.yifeplayte.maxmipadinput.hook.hooks.home.GestureOperationHelper
 import com.yifeplayte.maxmipadinput.utils.XSharedPreferences
 import de.robv.android.xposed.IXposedHookLoadPackage
 import de.robv.android.xposed.callbacks.XC_LoadPackage
@@ -12,6 +13,7 @@ import de.robv.android.xposed.callbacks.XC_LoadPackage
 private const val TAG = "MaxMiPad"
 private val PACKAGE_NAME_HOOKED = setOf(
     "android",
+    "com.miui.home",
 )
 
 class MainHook : IXposedHookLoadPackage {
@@ -35,11 +37,19 @@ class MainHook : IXposedHookLoadPackage {
                     if (XSharedPreferences.getBoolean("remove_stylus_bluetooth_restriction", true)) {
                         initHooks(MiuiStylusDeviceListener)
                     }
-                    if (XSharedPreferences.getBoolean("ignore_stylus_key_gesture", true)) {
+                    if (XSharedPreferences.getBoolean("ignore_stylus_key_gesture", false)) {
                         initHooks(MiuiStylusPageKeyListener)
                     }
                     if (XSharedPreferences.getBoolean("disable_fixed_orientation", true)) {
                         initHooks(MiuiFixedOrientationController)
+                    }
+                    if (XSharedPreferences.getBoolean("set_gesture_need_finger_num_to_4", false)) {
+                        initHooks(BaseMiuiMultiFingerGesture)
+                    }
+                }
+                "com.miui.home" -> {
+                    if (XSharedPreferences.getBoolean("set_gesture_need_finger_num_to_4", false)) {
+                        initHooks(GestureOperationHelper)
                     }
                 }
             }

@@ -40,7 +40,14 @@ class MainPage : BasePage() {
                 textId = R.string.ignore_stylus_key_gesture,
                 tipsId = R.string.ignore_stylus_key_gesture_tips
             ),
-            SwitchV("ignore_stylus_key_gesture", true)
+            SwitchV("ignore_stylus_key_gesture", false)
+        )
+        TextSummaryWithSwitch(
+            TextSummaryV(
+                textId = R.string.set_gesture_need_finger_num_to_4,
+                tipsId = R.string.set_gesture_need_finger_num_to_4_tips
+            ),
+            SwitchV("set_gesture_need_finger_num_to_4", false)
         )
         Line()
         TitleText(textId = R.string.screen)
