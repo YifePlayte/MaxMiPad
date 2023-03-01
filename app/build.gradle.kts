@@ -1,3 +1,6 @@
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -21,7 +24,7 @@ android {
             proguardFiles("proguard-rules.pro")
         }
         named("debug") {
-            versionNameSuffix = "-debug-" + org.gradle.internal.time.Time.currentTimeMillis()
+            versionNameSuffix = "-debug-" + DateTimeFormatter.ofPattern("yyyyMMddHHmmss").format(LocalDateTime.now())
         }
     }
 
