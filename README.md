@@ -12,11 +12,14 @@ Provide some enhancements to Mi Pad
 - 恢复ESC键功能 / Restore ESC function
 - 去除触控笔蓝牙限制 / Remove stylus bluetooth restriction
 - 忽略触控笔按键手势 / Ignore stylus buttons gesture
+- 交换手势所需的手指数量 / Swap the number of fingers required for gestures
 - 禁用固定屏幕方向 / Disable fixed orientation
 
 ---
 
 ### 第三方开源引用 / Third-party open source references
+##### GNU General Public License v3.0
+[Simplicity-Team/WooBoxForMIUI](https://github.com/Simplicity-Team/WooBoxForMIUI)
 ##### GNU Lesser General Public License v2.1
 [577fkj/blockmiui](https://github.com/577fkj/blockmiui)  
 ##### Apache License 2.0
