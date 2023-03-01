@@ -45,4 +45,13 @@ object Terminal {
         }
     }
 
+    fun exec(commands: Array<String>): String {
+        val stringBuilder = java.lang.StringBuilder()
+        for (command in commands) {
+            stringBuilder.append(exec(command))
+            stringBuilder.append("\n")
+        }
+        return stringBuilder.toString()
+    }
+
 }
