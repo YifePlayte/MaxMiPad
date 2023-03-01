@@ -11,9 +11,9 @@ object MiuiMagicPointerUtils : BaseHook() {
             findMethod("android.magicpointer.util.MiuiMagicPointerUtils") {
                 name == "isEnable"
             }.hookReturnConstant(false)
-            XposedBridge.log("MaxMiPadInput: Hook MiuiMagicPointerUtils.isEnable success!")
+            XposedBridge.log("MaxMiPad: Hook MiuiMagicPointerUtils.isEnable success!")
         } catch (e: Throwable) {
-            XposedBridge.log("MaxMiPadInput: Hook MiuiMagicPointerUtils.isEnable failed!")
+            XposedBridge.log("MaxMiPad: Hook MiuiMagicPointerUtils.isEnable failed!")
             XposedBridge.log(e)
         }
     }

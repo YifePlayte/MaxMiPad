@@ -18,9 +18,9 @@ object MiuiFixedOrientationController : BaseHook() {
                     param.result = true
                 }
             }
-            XposedBridge.log("MaxMiPadInput: Hook shouldDisableFixedOrientation success!")
+            XposedBridge.log("MaxMiPad: Hook shouldDisableFixedOrientation success!")
         } catch (e: Throwable) {
-            XposedBridge.log("MaxMiPadInput: Hook shouldDisableFixedOrientation failed!")
+            XposedBridge.log("MaxMiPad: Hook shouldDisableFixedOrientation failed!")
             XposedBridge.log(e)
         }
     }

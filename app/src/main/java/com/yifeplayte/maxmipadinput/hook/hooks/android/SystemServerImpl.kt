@@ -11,9 +11,9 @@ object SystemServerImpl : BaseHook() {
             findMethod("com.android.server.SystemServerImpl") {
                 name == "addMagicPointerManagerService"
             }.hookReturnConstant(null)
-            XposedBridge.log("MaxMiPadInput: Hook addMagicPointerManagerService success!")
+            XposedBridge.log("MaxMiPad: Hook addMagicPointerManagerService success!")
         } catch (e: Throwable) {
-            XposedBridge.log("MaxMiPadInput: Hook addMagicPointerManagerService failed!")
+            XposedBridge.log("MaxMiPad: Hook addMagicPointerManagerService failed!")
             XposedBridge.log(e)
         }
     }

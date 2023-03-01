@@ -39,9 +39,9 @@ object MiuiStylusDeviceListener : BaseHook() {
                     mTouchFeature?.invokeMethod("setTouchMode", args(0, 20, 1), argTypes(Int::class.java,Int::class.java,Int::class.java))
                 }
             }
-            XposedBridge.log("MaxMiPadInput: Hook MiuiStylusDeviceListener success!")
+            XposedBridge.log("MaxMiPad: Hook MiuiStylusDeviceListener success!")
         } catch (e: Throwable) {
-            XposedBridge.log("MaxMiPadInput: Hook MiuiStylusDeviceListener failed!")
+            XposedBridge.log("MaxMiPad: Hook MiuiStylusDeviceListener failed!")
             XposedBridge.log(e)
         }
     }

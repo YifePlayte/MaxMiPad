@@ -14,9 +14,9 @@ object SetPadMode : BaseHook() {
                 // XposedBridge.log("MaxMiPadInputTest: setPadMode called!")
                 param.args[0] = false
             }
-            XposedBridge.log("MaxMiPadInput: Hook setPadMode success!")
+            XposedBridge.log("MaxMiPad: Hook setPadMode success!")
         } catch (e: Throwable) {
-            XposedBridge.log("MaxMiPadInput: Hook setPadMode failed!")
+            XposedBridge.log("MaxMiPad: Hook setPadMode failed!")
             XposedBridge.log(e)
         }
     }

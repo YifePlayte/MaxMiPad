@@ -18,9 +18,9 @@ object MiuiStylusPageKeyListener : BaseHook() {
                     name == "isPageKeyEnable"
                 }.hookReturnConstant(false)
             }
-            XposedBridge.log("MaxMiPadInput: Hook isPageKeyEnable success!")
+            XposedBridge.log("MaxMiPad: Hook isPageKeyEnable success!")
         } catch (e: Throwable) {
-            XposedBridge.log("MaxMiPadInput: Hook isPageKeyEnable failed!")
+            XposedBridge.log("MaxMiPad: Hook isPageKeyEnable failed!")
         }
         try {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
@@ -32,9 +32,9 @@ object MiuiStylusPageKeyListener : BaseHook() {
                     name == "needInterceptBeforeDispatching"
                 }.hookReturnConstant(false)
             }
-            XposedBridge.log("MaxMiPadInput: Hook needInterceptBeforeDispatching success!")
+            XposedBridge.log("MaxMiPad: Hook needInterceptBeforeDispatching success!")
         } catch (e: Throwable) {
-            XposedBridge.log("MaxMiPadInput: Hook needInterceptBeforeDispatching failed!")
+            XposedBridge.log("MaxMiPad: Hook needInterceptBeforeDispatching failed!")
         }
         try {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
@@ -46,9 +46,9 @@ object MiuiStylusPageKeyListener : BaseHook() {
                     name == "shouldInterceptKey"
                 }.hookReturnConstant(false)
             }
-            XposedBridge.log("MaxMiPadInput: Hook shouldInterceptKey success!")
+            XposedBridge.log("MaxMiPad: Hook shouldInterceptKey success!")
         } catch (e: Throwable) {
-            XposedBridge.log("MaxMiPadInput: Hook shouldInterceptKey failed!")
+            XposedBridge.log("MaxMiPad: Hook shouldInterceptKey failed!")
             XposedBridge.log(e)
         }
     }

@@ -9,7 +9,7 @@ import com.yifeplayte.maxmipadinput.utils.XSharedPreferences
 import de.robv.android.xposed.IXposedHookLoadPackage
 import de.robv.android.xposed.callbacks.XC_LoadPackage
 
-private const val TAG = "MaxMiPadInput"
+private const val TAG = "MaxMiPad"
 private val PACKAGE_NAME_HOOKED = setOf(
     "android",
 )

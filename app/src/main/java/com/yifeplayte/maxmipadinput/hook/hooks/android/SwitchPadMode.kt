@@ -13,9 +13,9 @@ object SwitchPadMode : BaseHook() {
             }.hookBefore { param ->
                 param.args[0] = false
             }
-            XposedBridge.log("MaxMiPadInput: Hook switchPadMode success!")
+            XposedBridge.log("MaxMiPad: Hook switchPadMode success!")
         } catch (e: Throwable) {
-            XposedBridge.log("MaxMiPadInput: Hook switchPadMode failed!")
+            XposedBridge.log("MaxMiPad: Hook switchPadMode failed!")
             XposedBridge.log(e)
         }
     }
