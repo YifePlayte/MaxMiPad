@@ -18,7 +18,7 @@ object MiuiStylusDeviceListener : BaseHook() {
                     argTypes(Int::class.java, Int::class.java, Int::class.java)
                 )
             }
-            findAllMethods("com.miui.server.input.stylus.MiuiStylusDeviceListener") { true }.hookAfter {
+            findAllMethods("com.miui.server.input.stylus.MiuiStylusDeviceListener") { true }.hookReplace {
                 val ITouchFeature = loadClass("miui.util.ITouchFeature")
                 val mTouchFeature = findMethod(ITouchFeature) {
                     name == "getInstance"
@@ -41,7 +41,7 @@ object MiuiStylusDeviceListener : BaseHook() {
                     argTypes(Int::class.java, Int::class.java, Int::class.java)
                 )
             }
-            findAllMethods("com.miui.server.stylus.MiuiStylusDeviceListener") { true }.hookAfter {
+            findAllMethods("com.miui.server.stylus.MiuiStylusDeviceListener") { true }.hookReplace {
                 val ITouchFeature = loadClass("miui.util.ITouchFeature")
                 val mTouchFeature = findMethod(ITouchFeature) {
                     name == "getInstance"
