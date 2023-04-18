@@ -14,7 +14,7 @@ object MiuiStylusDeviceListener : BaseHook() {
                 }.invoke(null)
                 mTouchFeature?.invokeMethod(
                     "setTouchMode",
-                    args(0, 20, 1),
+                    args(0, 20, 0x12),
                     argTypes(Int::class.java, Int::class.java, Int::class.java)
                 )
             }
@@ -25,7 +25,7 @@ object MiuiStylusDeviceListener : BaseHook() {
                 }.invoke(null)
                 mTouchFeature?.invokeMethod(
                     "setTouchMode",
-                    args(0, 20, 1),
+                    args(0, 20, 0x12),
                     argTypes(Int::class.java, Int::class.java, Int::class.java)
                 )
             }
