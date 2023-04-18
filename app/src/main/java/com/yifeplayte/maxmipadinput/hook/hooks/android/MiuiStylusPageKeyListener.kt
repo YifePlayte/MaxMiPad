@@ -4,35 +4,28 @@ import android.os.Build
 import com.github.kyuubiran.ezxhelper.utils.findMethod
 import com.github.kyuubiran.ezxhelper.utils.hookReturnConstant
 import com.yifeplayte.maxmipadinput.hook.hooks.BaseHook
+import java.lang.reflect.Method
 
 object MiuiStylusPageKeyListener : BaseHook() {
     override fun init() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            findMethod("com.miui.server.input.stylus.MiuiStylusPageKeyListener") {
-                name == "isPageKeyEnable"
-            }.hookReturnConstant(false)
+        val methods = mutableListOf<Method>()
+        val className = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            "com.miui.server.input.stylus.MiuiStylusPageKeyListener"
         } else {
-            findMethod("com.miui.server.stylus.MiuiStylusPageKeyListener") {
-                name == "isPageKeyEnable"
-            }.hookReturnConstant(false)
+            "com.miui.server.stylus.MiuiStylusPageKeyListener"
         }
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            findMethod("com.miui.server.input.stylus.MiuiStylusPageKeyListener") {
-                name == "needInterceptBeforeDispatching"
-            }.hookReturnConstant(false)
-        } else {
-            findMethod("com.miui.server.stylus.MiuiStylusPageKeyListener") {
-                name == "needInterceptBeforeDispatching"
-            }.hookReturnConstant(false)
+        val methodNames = setOf(
+            "isPageKeyEnable", "needInterceptBeforeDispatching", "shouldInterceptKey"
+        )
+        methodNames.forEach { methodName ->
+            kotlin.runCatching {
+                findMethod(className) {
+                    name == methodName
+                }
+            }.getOrNull()?.let { method ->
+                methods.add(method)
+            }
         }
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            findMethod("com.miui.server.input.stylus.MiuiStylusPageKeyListener") {
-                name == "shouldInterceptKey"
-            }.hookReturnConstant(false)
-        } else {
-            findMethod("com.miui.server.stylus.MiuiStylusPageKeyListener") {
-                name == "shouldInterceptKey"
-            }.hookReturnConstant(false)
-        }
+        methods.hookReturnConstant(false)
     }
 }

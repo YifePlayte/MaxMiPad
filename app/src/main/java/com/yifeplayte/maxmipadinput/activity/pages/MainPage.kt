@@ -1,5 +1,6 @@
 package com.yifeplayte.maxmipadinput.activity.pages
 
+import android.annotation.SuppressLint
 import android.view.View
 import cn.fkj233.ui.activity.MIUIActivity
 import cn.fkj233.ui.activity.annotation.BMMainPage
@@ -10,6 +11,7 @@ import cn.fkj233.ui.dialog.MIUIDialog
 import com.yifeplayte.maxmipadinput.R
 import com.yifeplayte.maxmipadinput.utils.Terminal
 
+@SuppressLint("NonConstantResourceId")
 @BMMainPage(titleId = R.string.app_name)
 class MainPage : BasePage() {
     override fun onCreate() {
@@ -70,7 +72,7 @@ class MainPage : BasePage() {
                 dataBindingSend = bindingDisableFixedOrientation.bindingSend
             )
         )
-        TextSummaryArrow(
+        TextSummaryWithArrow(
             TextSummaryV(
                 textId = R.string.disable_fixed_orientation_scope,
                 tipsId = R.string.disable_fixed_orientation_scope_tips
@@ -81,7 +83,7 @@ class MainPage : BasePage() {
         )
         Line()
         TitleText(textId = R.string.reboot)
-        TextSummaryArrow(
+        TextSummaryWithArrow(
             TextSummaryV(
                 textId = R.string.reboot_system
             ) {

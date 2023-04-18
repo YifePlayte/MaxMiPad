@@ -18,6 +18,7 @@ class MainActivity : MIUIActivity() {
     @SuppressLint("WorldReadableFiles")
     private fun checkLSPosed() {
         try {
+            @Suppress("DEPRECATION")
             setSP(getSharedPreferences("config", MODE_WORLD_READABLE))
         } catch (exception: SecurityException) {
             isLoad = false

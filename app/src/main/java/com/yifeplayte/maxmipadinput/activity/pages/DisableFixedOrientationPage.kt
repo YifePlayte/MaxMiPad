@@ -1,5 +1,6 @@
 package com.yifeplayte.maxmipadinput.activity.pages
 
+import android.annotation.SuppressLint
 import android.content.pm.ApplicationInfo
 import cn.fkj233.ui.activity.MIUIActivity
 import cn.fkj233.ui.activity.annotation.BMPage
@@ -14,6 +15,7 @@ import io.github.ranlee1.jpinyin.PinyinFormat
 import io.github.ranlee1.jpinyin.PinyinHelper
 import java.util.*
 
+@SuppressLint("NonConstantResourceId")
 @BMPage(key = "DisableFixedOrientationPage", titleId = R.string.disable_fixed_orientation_scope)
 class DisableFixedOrientationPage : BasePage() {
     init {
@@ -23,7 +25,7 @@ class DisableFixedOrientationPage : BasePage() {
     override fun asyncInit(fragment: MIUIFragment) {
         fragment.showLoading()
         try {
-            val packagesInfo = activity.packageManager.getInstalledApplications(0)
+            @Suppress("DEPRECATION") val packagesInfo = activity.packageManager.getInstalledApplications(0)
             packagesInfo.sortWith { u1, u2 ->
                 return@sortWith PinyinHelper.convertToPinyinString(
                     u1.loadLabel(activity.packageManager).toString(),
@@ -44,7 +46,7 @@ class DisableFixedOrientationPage : BasePage() {
                             text = i.loadLabel(activity.packageManager).toString(),
                             tips = i.packageName
                         ), SwitchV("disable_fixed_orientation_" + i.packageName) { switchValue ->
-                            val packagesInfo1 =
+                            @Suppress("DEPRECATION") val packagesInfo1 =
                                 MIUIActivity.activity.packageManager.getInstalledApplications(0)
                             val shouldDisableFixedOrientationList = mutableListOf<String>()
                             for (j in packagesInfo1) {
