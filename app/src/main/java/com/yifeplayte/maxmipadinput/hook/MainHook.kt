@@ -16,6 +16,7 @@ private val PACKAGE_NAME_HOOKED = setOf(
     "com.miui.home",
 )
 
+@Suppress("unused")
 class MainHook : IXposedHookLoadPackage {
     override fun handleLoadPackage(lpparam: XC_LoadPackage.LoadPackageParam) {
         if (lpparam.packageName in PACKAGE_NAME_HOOKED) {

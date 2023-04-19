@@ -24,4 +24,6 @@
     <string name="disable_fixed_orientation_scope_tips">重启后生效，按下返回保存配置</string>
     <string name="set_gesture_need_finger_num_to_4">交换手势所需的手指数量</string>
     <string name="set_gesture_need_finger_num_to_4_tips">将三指截屏、三指长按区域截屏、三指横向分屏手势改为四指触发，切换应用手势改为三指触发</string>
+    <string name="remove_stylus_bluetooth_restriction_driver_version">驱动版本</string>
+    <string name="remove_stylus_bluetooth_restriction_driver_version_tips">移除触控笔蓝牙限制所使用的驱动版本</string>
 </resources>

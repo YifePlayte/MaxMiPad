@@ -24,4 +24,6 @@
     <string name="disable_fixed_orientation_scope_tips">Take effect after reboot</string>
     <string name="set_gesture_need_finger_num_to_4">Swap the number of fingers required for gestures</string>
     <string name="set_gesture_need_finger_num_to_4_tips">Change screenshot gesture, partial screenshot gesture, and horizontal split screen gesture to be triggered by four fingers, and switch apps gesture to be triggered by three fingers</string>
+    <string name="remove_stylus_bluetooth_restriction_driver_version">Driver version</string>
+    <string name="remove_stylus_bluetooth_restriction_driver_version_tips">Driver version for removing stylus bluetooth restriction</string>
 </resources>

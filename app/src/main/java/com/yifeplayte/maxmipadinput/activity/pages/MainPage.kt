@@ -5,6 +5,7 @@ import android.view.View
 import cn.fkj233.ui.activity.MIUIActivity
 import cn.fkj233.ui.activity.annotation.BMMainPage
 import cn.fkj233.ui.activity.data.BasePage
+import cn.fkj233.ui.activity.view.SpinnerV
 import cn.fkj233.ui.activity.view.SwitchV
 import cn.fkj233.ui.activity.view.TextSummaryV
 import cn.fkj233.ui.dialog.MIUIDialog
@@ -30,12 +31,39 @@ class MainPage : BasePage() {
             ),
             SwitchV("restore_esc", true)
         )
+        val bindingRemoveStylusBluetoothRestriction =
+            GetDataBinding({
+                MIUIActivity.safeSP.getBoolean("remove_stylus_bluetooth_restriction", true)
+            }) { view, flags, data ->
+                when (flags) {
+                    1 -> view.visibility = if (data as Boolean) View.VISIBLE else View.GONE
+                }
+            }
         TextSummaryWithSwitch(
             TextSummaryV(
                 textId = R.string.remove_stylus_bluetooth_restriction,
                 tipsId = R.string.remove_stylus_bluetooth_restriction_tips
             ),
-            SwitchV("remove_stylus_bluetooth_restriction", true)
+            SwitchV(
+                key = "remove_stylus_bluetooth_restriction",
+                defValue = true,
+                dataBindingSend = bindingRemoveStylusBluetoothRestriction.bindingSend
+            )
+        )
+        TextSummaryWithSpinner(
+            TextSummaryV(
+                textId = R.string.remove_stylus_bluetooth_restriction_driver_version,
+                tipsId = R.string.remove_stylus_bluetooth_restriction_driver_version_tips
+            ),
+            SpinnerV(MIUIActivity.safeSP.getString("remove_stylus_bluetooth_restriction_driver_version", "2")) {
+                add("1") {
+                    MIUIActivity.safeSP.putAny("remove_stylus_bluetooth_restriction_driver_version", "1")
+                }
+                add("2") {
+                    MIUIActivity.safeSP.putAny("remove_stylus_bluetooth_restriction_driver_version", "2")
+                }
+            },
+            dataBindingRecv = bindingRemoveStylusBluetoothRestriction.getRecv(1)
         )
         TextSummaryWithSwitch(
             TextSummaryV(
