@@ -1,4 +1,4 @@
-package com.yifeplayte.maxmipadinput.utils
+package com.yifeplayte.maxmipadinput.hook.utils
 
 import com.yifeplayte.maxmipadinput.BuildConfig
 import de.robv.android.xposed.XSharedPreferences
