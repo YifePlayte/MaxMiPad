@@ -10,8 +10,8 @@ object NoMagicPointer : BaseHook() {
     override fun init() {
         loadClassOrNull("android.magicpointer.util.MiuiMagicPointerUtils")?.methodFinder()?.filterByName("isEnable")
             ?.first()?.createHook {
-            returnConstant(false)
-        }
+                returnConstant(false)
+            }
         loadClass("com.android.server.SystemServerImpl").methodFinder()
             .filterByName("addMagicPointerManagerService").first().createHook {
                 returnConstant(null)

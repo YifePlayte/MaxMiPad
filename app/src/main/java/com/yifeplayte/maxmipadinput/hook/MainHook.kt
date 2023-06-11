@@ -12,7 +12,7 @@ import de.robv.android.xposed.IXposedHookZygoteInit
 import de.robv.android.xposed.callbacks.XC_LoadPackage
 
 private const val TAG = "MaxMiPad"
-private val PACKAGE_NAME_HOOKED = setOf(
+val PACKAGE_NAME_HOOKED = setOf(
     "android",
     "com.miui.home",
 )

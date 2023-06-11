@@ -26,4 +26,7 @@
     <string name="set_gesture_need_finger_num_to_4_tips">Change screenshot gesture, partial screenshot gesture, and horizontal split screen gesture to be triggered by four fingers, and switch apps gesture to be triggered by three fingers</string>
     <string name="remove_stylus_bluetooth_restriction_driver_version">Driver version</string>
     <string name="remove_stylus_bluetooth_restriction_driver_version_tips">Driver version for removing stylus bluetooth restriction</string>
+    <string name="restart_all_scope">Restart all scope</string>
+    <string name="restart_all_scope_tips">Are you sure to restart all scope?</string>
+    <string name="finished">Finished</string>
 </resources>
