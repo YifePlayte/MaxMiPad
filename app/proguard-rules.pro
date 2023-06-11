@@ -1,1 +1,1 @@
--keep class com.yifeplayte.maxmipadinput.hook.MainHook-keep class com.yifeplayte.maxmipadinput.hook.hooks.**.**-keepattributes RuntimeVisibleAnnotations
+-keep class com.yifeplayte.maxmipadinput.hook.MainHook { <init>(); }-keep class com.yifeplayte.maxmipadinput.hook.hooks.**.** { <init>(); }-keepattributes RuntimeVisibleAnnotations
