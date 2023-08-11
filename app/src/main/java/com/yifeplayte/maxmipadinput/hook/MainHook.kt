@@ -6,6 +6,7 @@ import com.github.kyuubiran.ezxhelper.LogExtensions.logexIfThrow
 import com.yifeplayte.maxmipadinput.hook.hooks.BaseHook
 import com.yifeplayte.maxmipadinput.hook.hooks.android.*
 import com.yifeplayte.maxmipadinput.hook.hooks.multiple.SetGestureNeedFingerNumTo4
+import com.yifeplayte.maxmipadinput.hook.utils.DexKit
 import com.yifeplayte.maxmipadinput.hook.utils.XSharedPreferences.getBoolean
 import de.robv.android.xposed.IXposedHookLoadPackage
 import de.robv.android.xposed.IXposedHookZygoteInit
@@ -21,10 +22,13 @@ val PACKAGE_NAME_HOOKED = setOf(
 class MainHook : IXposedHookLoadPackage, IXposedHookZygoteInit {
     override fun handleLoadPackage(lpparam: XC_LoadPackage.LoadPackageParam) {
         if (lpparam.packageName in PACKAGE_NAME_HOOKED) {
-            // Init EzXHelper
+
+            // init DexKit and EzXHelper
+            if (lpparam.packageName != "android") DexKit.initDexKit(lpparam)
             EzXHelper.initHandleLoadPackage(lpparam)
             EzXHelper.setLogTag(TAG)
             EzXHelper.setToastTag(TAG)
+
             // Init hooks
             when (lpparam.packageName) {
                 "android" -> {
@@ -40,6 +44,8 @@ class MainHook : IXposedHookLoadPackage, IXposedHookZygoteInit {
                     initHook(SetGestureNeedFingerNumTo4, "set_gesture_need_finger_num_to_4")
                 }
             }
+
+            DexKit.closeDexKit()
         }
     }
 
