@@ -1,5 +1,6 @@
 <resources>
     <string name="cancel">取消</string>
+    <string name="clear">清空</string>
     <string name="disable_fixed_orientation">禁用固定屏幕方向</string>
     <string name="disable_fixed_orientation_scope">禁用固定屏幕方向作用域</string>
     <string name="disable_fixed_orientation_scope_tips">重启后生效</string>
@@ -24,6 +25,7 @@
     <string name="restore_esc">恢复ESC键功能</string>
     <string name="restore_esc_tips">恢复被MIUI强映射为“返回”功能的ESC键。</string>
     <string name="screen">屏幕</string>
+    <string name="search">搜索</string>
     <string name="set_gesture_need_finger_num_to_4">交换手势所需的手指数量</string>
     <string name="set_gesture_need_finger_num_to_4_tips">将三指截屏、三指长按区域截屏、三指横向分屏手势改为四指触发，切换应用手势改为三指触发</string>
     <string name="warning">警告</string>

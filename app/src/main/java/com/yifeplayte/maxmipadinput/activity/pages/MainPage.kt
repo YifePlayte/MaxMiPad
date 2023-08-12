@@ -149,6 +149,7 @@ class MainPage : BasePage() {
                     }
                     setRButton(R.string.done) {
                         Terminal.exec("/system/bin/sync;/system/bin/svc power reboot || reboot")
+                        dismiss()
                     }
                 }.show()
             }

@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name" translatable="false">MaxMiPad</string>
     <string name="cancel">Cancel</string>
+    <string name="clear">清空</string>
     <string name="disable_fixed_orientation">Disable fixed orientation</string>
     <string name="disable_fixed_orientation_scope">Disable fixed orientation scope</string>
     <string name="disable_fixed_orientation_scope_tips">Take effect after reboot</string>
@@ -25,6 +26,7 @@
     <string name="restore_esc">Restore ESC function</string>
     <string name="restore_esc_tips">Restore ESC function which has been hard-mapped to \"back\" function by MIUI.</string>
     <string name="screen">Screen</string>
+    <string name="search">Search</string>
     <string name="set_gesture_need_finger_num_to_4">Swap the number of fingers required for gestures</string>
     <string name="set_gesture_need_finger_num_to_4_tips">Change screenshot gesture, partial screenshot gesture, and horizontal split screen gesture to be triggered by four fingers, and switch apps gesture to be triggered by three fingers</string>
     <string name="warning">Warning</string>
