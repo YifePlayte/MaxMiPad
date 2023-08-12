@@ -15,8 +15,8 @@ android {
         applicationId = "com.yifeplayte.maxmipadinput"
         minSdk = 31
         targetSdk = 33
-        versionCode = 12
-        versionName = "1.3.3"
+        versionCode = 13
+        versionName = "1.3.4"
     }
 
     buildTypes {
