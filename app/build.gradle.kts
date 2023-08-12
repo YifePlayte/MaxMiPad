@@ -9,6 +9,8 @@ plugins {
 android {
     compileSdk = 33
 
+    namespace = "com.yifeplayte.maxmipadinput"
+
     defaultConfig {
         applicationId = "com.yifeplayte.maxmipadinput"
         minSdk = 31
@@ -29,8 +31,12 @@ android {
     }
 
     androidResources {
-        additionalParameters("--allow-reserved-package-id", "--package-id", "0x45")
+        additionalParameters += "--allow-reserved-package-id"
+        additionalParameters += "--package-id"
+        additionalParameters += "0x45"
+        generateLocaleConfig = true
     }
+
     packagingOptions {
         resources {
             excludes += "/META-INF/**"
@@ -46,7 +52,6 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_11.toString()
     }
-    namespace = "com.yifeplayte.maxmipadinput"
 }
 
 dependencies {
