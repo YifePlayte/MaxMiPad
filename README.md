@@ -39,3 +39,9 @@ Provide some enhancements to Mi Pad
 ### License
 
 [GNU General Public License v3.0](https://github.com/YifePlayte/MaxMiPad/blob/main/LICENSE)
+
+---
+
+### 捐赠 / Sponsor
+
+[爱发电 / AFDIAN](https://afdian.net/a/YifePlayte)
