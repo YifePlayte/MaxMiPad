@@ -8,6 +8,7 @@ import com.yifeplayte.maxmipadinput.hook.hooks.BaseHook
 object IgnoreStylusKeyGesture : BaseHook() {
     override fun init() {
         val clazzMiuiStylusPageKeyListener = loadFirstClass(
+            "com.miui.server.input.stylus.MiuiStylusShortcutManager",
             "com.miui.server.input.stylus.MiuiStylusPageKeyListener",
             "com.miui.server.stylus.MiuiStylusPageKeyListener"
         )
