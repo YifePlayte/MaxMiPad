@@ -18,6 +18,12 @@ Provide some enhancements to Mi Pad
 
 ---
 
+### 友情链接 / Recommended Repositories
+
+[CwithW/MiuiPadMeta](https://github.com/CwithW/MiuiPadMeta)
+
+---
+
 ### 第三方开源引用 / Third-party open source references
 
 ##### GNU General Public License v3.0
