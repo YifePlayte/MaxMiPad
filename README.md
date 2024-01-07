@@ -1,6 +1,6 @@
 # MaxMiPad
 
-<a href="https://github.com/Xposed-Modules-Repo/com.yifeplayte.maxmipadinput/releases"><img alt="GitHub all releases" src="https://img.shields.io/github/downloads/Xposed-Modules-Repo/com.yifeplayte.maxmipadinput/total?label=Downloads"></a> <a href="https://github.com/YifePlayte/MaxMiPad/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/YifePlayte/MaxMiPad"></a> <a href="https://github.com/YifePlayte/MaxMiPad/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/YifePlayte/MaxMiPad"></a> <a href="https://github.com/YifePlayte/MaxMiPad/blob/main/LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/YifePlayte/MaxMiPad"></a>
+<a href="https://github.com/Xposed-Modules-Repo/com.yifeplayte.maxmipadinput/releases"><img alt="GitHub all releases" src="https://img.shields.io/github/downloads/Xposed-Modules-Repo/com.yifeplayte.maxmipadinput/total?label=Downloads"></a> <a href="https://github.com/YifePlayte/MaxMiPad/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/YifePlayte/MaxMiPad?style=flat"></a> <a href="https://github.com/YifePlayte/MaxMiPad/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/YifePlayte/MaxMiPad"></a> <a href="https://github.com/YifePlayte/MaxMiPad/blob/main/LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/YifePlayte/MaxMiPad"></a>
 
 为小米平板提供一些增强功能  
 Provide some enhancements to Mi Pad
@@ -14,6 +14,7 @@ Provide some enhancements to Mi Pad
 - 去除触控笔蓝牙限制 / Remove stylus bluetooth restriction
 - 忽略触控笔按键手势 / Ignore stylus buttons gesture
 - 交换手势所需的手指数量 / Swap the number of fingers required for gestures
+- 禁用应用内系统桌面多指手势 / Disable multi-finger gesture from system launcher in apps
 - 禁用固定屏幕方向 / Disable fixed orientation
 
 ---
