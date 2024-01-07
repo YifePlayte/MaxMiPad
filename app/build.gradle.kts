@@ -46,18 +46,18 @@ android {
         generateLocaleConfig = true
     }
 
-    packagingOptions {
-        resources {
+    packaging.resources {
             excludes += "/META-INF/**"
             excludes += "/kotlin/**"
             excludes += "/*.txt"
             excludes += "/*.bin"
-        }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_11.toString()
     }
@@ -65,7 +65,7 @@ android {
 
 dependencies {
     implementation(project(":blockmiui"))
-    implementation("com.github.kyuubiran:EzXHelper:2.0.6")
+    implementation("com.github.kyuubiran:EzXHelper:2.0.8")
     implementation("io.github.ranlee1:jpinyin:1.0.1")
     implementation("org.luckypray:DexKit:1.1.8")
     compileOnly("de.robv.android.xposed:api:82")
