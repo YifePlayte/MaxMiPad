@@ -8,14 +8,14 @@ plugins {
 }
 
 android {
-    compileSdk = 33
+    compileSdk = 34
 
     namespace = "com.yifeplayte.maxmipadinput"
 
     defaultConfig {
         applicationId = "com.yifeplayte.maxmipadinput"
         minSdk = 31
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 14
         versionName = "1.3.5"
 
