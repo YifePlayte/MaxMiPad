@@ -1,6 +1,7 @@
 package com.yifeplayte.maxmipadinput.hook.hooks.multiple
 
 import android.os.Build
+import android.view.InputDevice.SOURCE_TOUCHSCREEN
 import android.view.MotionEvent
 import com.github.kyuubiran.ezxhelper.ClassUtils
 import com.github.kyuubiran.ezxhelper.ClassUtils.loadClass
@@ -37,11 +38,10 @@ object SetGestureNeedFingerNumTo4 : BaseHook() {
                                     "SWIPE_DIRECTION_RIGHT"
                                 )
                             val flagsSwipeLeftAndRight = setOf(flagSwipeLeft, flagSwipeRight)
-                            val z =
-                                if (motionEvent.device == null) true
-                                else motionEvent.device.sources and 4098 == 4098
+                            val isTouchScreen =
+                                motionEvent.device?.supportsSource(SOURCE_TOUCHSCREEN) ?: true
                             param.result =
-                                Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU && z && (swipeFlag in flagsSwipeLeftAndRight) && motionEvent.pointerCount == 4
+                                Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU && isTouchScreen && (swipeFlag in flagsSwipeLeftAndRight) && motionEvent.pointerCount == 4
                         }
                     }
             }

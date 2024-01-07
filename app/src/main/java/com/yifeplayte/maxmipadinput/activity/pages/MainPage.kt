@@ -81,6 +81,12 @@ class MainPage : BasePage() {
             ),
             SwitchV("set_gesture_need_finger_num_to_4", false)
         )
+        TextSummaryWithSwitch(
+            TextSummaryV(
+                textId = R.string.disable_multi_finger_gesture
+            ),
+            SwitchV("disable_multi_finger_gesture", false)
+        )
         Line()
         TitleText(textId = R.string.screen)
         val bindingDisableFixedOrientation =

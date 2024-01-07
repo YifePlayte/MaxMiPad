@@ -6,6 +6,7 @@
     <string name="disable_fixed_orientation_scope">Disable fixed orientation scope</string>
     <string name="disable_fixed_orientation_scope_tips">Take effect after reboot</string>
     <string name="disable_fixed_orientation_tips">Disable some app\'s fixed orientation</string>
+    <string name="disable_multi_finger_gesture">Disable multi-finger gesture from system launcher in apps</string>
     <string name="done">OK</string>
     <string name="finished">Finished</string>
     <string name="ignore_stylus_key_gesture">Ignore stylus buttons gesture</string>
