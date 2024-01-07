@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name" translatable="false">MaxMiPad</string>
     <string name="cancel">Cancel</string>
-    <string name="clear">清空</string>
+    <string name="clear">Clear</string>
     <string name="disable_fixed_orientation">Disable fixed orientation</string>
     <string name="disable_fixed_orientation_scope">Disable fixed orientation scope</string>
     <string name="disable_fixed_orientation_scope_tips">Take effect after reboot</string>
