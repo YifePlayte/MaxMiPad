@@ -7,8 +7,11 @@ import com.yifeplayte.maxmipadinput.hook.hooks.BaseHook
 import com.yifeplayte.maxmipadinput.hook.utils.XSharedPreferences.getStringSet
 
 object DisableFixedOrientation : BaseHook() {
+    private val shouldDisableFixedOrientationList by lazy {
+        getStringSet("should_disable_fixed_orientation_list", mutableSetOf())
+    }
+
     override fun init() {
-        val shouldDisableFixedOrientationList = getStringSet("should_disable_fixed_orientation_list", mutableSetOf())
         loadClass("com.android.server.wm.MiuiFixedOrientationController").methodFinder()
             .filterByName("shouldDisableFixedOrientation").first().createHook {
                 before {

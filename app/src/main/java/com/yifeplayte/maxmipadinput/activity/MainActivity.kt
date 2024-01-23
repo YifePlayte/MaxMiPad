@@ -7,6 +7,7 @@ import cn.fkj233.ui.dialog.MIUIDialog
 import com.yifeplayte.maxmipadinput.R
 import com.yifeplayte.maxmipadinput.activity.pages.DisableFixedOrientationPage
 import com.yifeplayte.maxmipadinput.activity.pages.MainPage
+import com.yifeplayte.maxmipadinput.utils.SharedPreferences.clearTemp
 import kotlin.system.exitProcess
 
 class MainActivity : MIUIActivity() {
@@ -19,7 +20,9 @@ class MainActivity : MIUIActivity() {
     private fun checkLSPosed() {
         try {
             @Suppress("DEPRECATION")
-            setSP(getSharedPreferences("config", MODE_WORLD_READABLE))
+            val sharedPreferences = getSharedPreferences("config", MODE_WORLD_READABLE)
+            sharedPreferences.clearTemp()
+            setSP(sharedPreferences)
         } catch (exception: SecurityException) {
             isLoad = false
             MIUIDialog(this) {

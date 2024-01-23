@@ -29,6 +29,7 @@
     <string name="search">搜索</string>
     <string name="set_gesture_need_finger_num_to_4">交换手势所需的手指数量</string>
     <string name="set_gesture_need_finger_num_to_4_tips">将三指截屏、三指长按区域截屏、三指横向分屏手势改为四指触发，切换应用手势改为三指触发</string>
+    <string name="show_system_applications">显示系统应用</string>
     <string name="warning">警告</string>
     <string name="xposed_desc">为小米平板提供一些增强功能</string>
 </resources>
