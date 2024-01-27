@@ -1,9 +1,10 @@
 package com.yifeplayte.maxmipadinput.activity.pages
 
 import android.annotation.SuppressLint
+import android.os.Build
 import android.view.View
 import android.widget.Toast
-import cn.fkj233.ui.activity.MIUIActivity
+import cn.fkj233.ui.activity.MIUIActivity.Companion.safeSP
 import cn.fkj233.ui.activity.annotation.BMMainPage
 import cn.fkj233.ui.activity.data.BasePage
 import cn.fkj233.ui.activity.view.SpinnerV
@@ -35,7 +36,7 @@ class MainPage : BasePage() {
         )
         val bindingRemoveStylusBluetoothRestriction =
             GetDataBinding({
-                MIUIActivity.safeSP.getBoolean("remove_stylus_bluetooth_restriction", true)
+                safeSP.getBoolean("remove_stylus_bluetooth_restriction", true)
             }) { view, flags, data ->
                 when (flags) {
                     1 -> view.visibility = if (data as Boolean) View.VISIBLE else View.GONE
@@ -52,17 +53,17 @@ class MainPage : BasePage() {
                 dataBindingSend = bindingRemoveStylusBluetoothRestriction.bindingSend
             )
         )
-        TextSummaryWithSpinner(
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) TextSummaryWithSpinner(
             TextSummaryV(
                 textId = R.string.remove_stylus_bluetooth_restriction_driver_version,
                 tipsId = R.string.remove_stylus_bluetooth_restriction_driver_version_tips
             ),
-            SpinnerV(MIUIActivity.safeSP.getString("remove_stylus_bluetooth_restriction_driver_version", "2")) {
+            SpinnerV(safeSP.getString("remove_stylus_bluetooth_restriction_driver_version", "2")) {
                 add("1") {
-                    MIUIActivity.safeSP.putAny("remove_stylus_bluetooth_restriction_driver_version", "1")
+                    safeSP.putAny("remove_stylus_bluetooth_restriction_driver_version", "1")
                 }
                 add("2") {
-                    MIUIActivity.safeSP.putAny("remove_stylus_bluetooth_restriction_driver_version", "2")
+                    safeSP.putAny("remove_stylus_bluetooth_restriction_driver_version", "2")
                 }
             },
             dataBindingRecv = bindingRemoveStylusBluetoothRestriction.getRecv(1)
@@ -91,7 +92,7 @@ class MainPage : BasePage() {
         TitleText(textId = R.string.screen)
         val bindingDisableFixedOrientation =
             GetDataBinding({
-                MIUIActivity.safeSP.getBoolean("disable_fixed_orientation", true)
+                safeSP.getBoolean("disable_fixed_orientation", true)
             }) { view, flags, data ->
                 when (flags) {
                     1 -> view.visibility = if (data as Boolean) View.VISIBLE else View.GONE
