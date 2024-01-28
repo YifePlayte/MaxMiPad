@@ -16,13 +16,14 @@ android {
         applicationId = "com.yifeplayte.maxmipadinput"
         minSdk = 31
         targetSdk = 34
-        versionCode = 15
-        versionName = "1.4.0"
+        versionCode = 16
+        versionName = "1.4.1"
 
         applicationVariants.configureEach {
             outputs.configureEach {
                 if (this is BaseVariantOutputImpl) {
-                    outputFileName = outputFileName.replace("app", rootProject.name).replace(Regex("debug|release"), versionName)
+                    outputFileName = outputFileName.replace("app", rootProject.name)
+                        .replace(Regex("debug|release"), versionName)
                 }
             }
         }
@@ -35,7 +36,8 @@ android {
             proguardFiles("proguard-rules.pro")
         }
         named("debug") {
-            versionNameSuffix = "-debug-" + DateTimeFormatter.ofPattern("yyyyMMddHHmmss").format(LocalDateTime.now())
+            versionNameSuffix = "-debug-" + DateTimeFormatter.ofPattern("yyyyMMddHHmmss")
+                .format(LocalDateTime.now())
         }
     }
 
@@ -47,10 +49,10 @@ android {
     }
 
     packaging.resources {
-            excludes += "/META-INF/**"
-            excludes += "/kotlin/**"
-            excludes += "/*.txt"
-            excludes += "/*.bin"
+        excludes += "/META-INF/**"
+        excludes += "/kotlin/**"
+        excludes += "/*.txt"
+        excludes += "/*.bin"
     }
 
     compileOptions {
