@@ -5,7 +5,7 @@ import com.github.kyuubiran.ezxhelper.Log
 import com.github.kyuubiran.ezxhelper.LogExtensions.logexIfThrow
 import com.yifeplayte.maxmipadinput.hook.hooks.BaseHook
 import com.yifeplayte.maxmipadinput.hook.hooks.android.*
-import com.yifeplayte.maxmipadinput.hook.hooks.home.DisableMultiFingerGesture
+import com.yifeplayte.maxmipadinput.hook.hooks.home.FixDisableMultiFingerGestureFilter
 import com.yifeplayte.maxmipadinput.hook.hooks.multiple.SetGestureNeedFingerNumTo4
 import com.yifeplayte.maxmipadinput.hook.utils.DexKit
 import com.yifeplayte.maxmipadinput.hook.utils.XSharedPreferences.getBoolean
@@ -43,7 +43,7 @@ class MainHook : IXposedHookLoadPackage, IXposedHookZygoteInit {
 
                 "com.miui.home" -> {
                     initHook(SetGestureNeedFingerNumTo4, "set_gesture_need_finger_num_to_4")
-                    initHook(DisableMultiFingerGesture,"disable_multi_finger_gesture")
+                    initHook(FixDisableMultiFingerGestureFilter,"fix_disable_multi_finger_gesture_filter")
                 }
             }
 

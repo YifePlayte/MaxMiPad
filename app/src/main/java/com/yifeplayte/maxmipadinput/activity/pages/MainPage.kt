@@ -84,9 +84,9 @@ class MainPage : BasePage() {
         )
         TextSummaryWithSwitch(
             TextSummaryV(
-                textId = R.string.disable_multi_finger_gesture
+                textId = R.string.fix_disable_multi_finger_gesture_filter
             ),
-            SwitchV("disable_multi_finger_gesture", false)
+            SwitchV("fix_disable_multi_finger_gesture_filter", false)
         )
         Line()
         TitleText(textId = R.string.screen)
