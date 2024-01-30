@@ -2,6 +2,7 @@
 <resources>
     <string-array name="xposedscope">
         <item>android</item>
+        <item>com.android.systemui</item>
         <item>com.miui.home</item>
     </string-array>
 </resources>

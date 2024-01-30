@@ -118,6 +118,12 @@ class MainPage : BasePage() {
             },
             dataBindingRecv = bindingDisableFixedOrientation.getRecv(1)
         )
+        TextSummaryWithSwitch(
+            TextSummaryV(
+                textId = R.string.vertical_split_on_portrait
+            ),
+            SwitchV("vertical_split_on_portrait", false)
+        )
         Line()
         TitleText(textId = R.string.reboot)
         TextSummaryWithArrow(
