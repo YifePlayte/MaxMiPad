@@ -3,6 +3,7 @@ package com.yifeplayte.maxmipadinput.hook.hooks.multiple
 import android.annotation.SuppressLint
 import android.content.Context
 import android.provider.Settings
+import android.view.LayoutInflater
 import com.github.kyuubiran.ezxhelper.ClassHelper.Companion.classHelper
 import com.github.kyuubiran.ezxhelper.ClassUtils.invokeStaticMethodBestMatch
 import com.github.kyuubiran.ezxhelper.ClassUtils.loadClass
@@ -10,8 +11,6 @@ import com.github.kyuubiran.ezxhelper.EzXHelper.appContext
 import com.github.kyuubiran.ezxhelper.EzXHelper.hostPackageName
 import com.github.kyuubiran.ezxhelper.HookFactory.`-Static`.createHook
 import com.github.kyuubiran.ezxhelper.HookFactory.`-Static`.createHooks
-import com.github.kyuubiran.ezxhelper.Log
-import com.github.kyuubiran.ezxhelper.MemberExtensions.isStatic
 import com.github.kyuubiran.ezxhelper.ObjectHelper.Companion.objectHelper
 import com.github.kyuubiran.ezxhelper.ObjectUtils.getObjectOrNull
 import com.github.kyuubiran.ezxhelper.ObjectUtils.invokeMethodBestMatch
@@ -34,6 +33,11 @@ object VerticalSplitOnPortrait : BaseHook() {
     private val drawableIcTaskMulti by lazy {
         appContext.resources.getIdentifier(
             "ic_task_multi", "drawable", hostPackageName
+        )
+    }
+    private val layoutDockedStackDividerInCtsMode by lazy {
+        appContext.resources.getIdentifier(
+            "docked_stack_divider_in_cts_mode", "layout", hostPackageName
         )
     }
 
@@ -74,10 +78,33 @@ object VerticalSplitOnPortrait : BaseHook() {
     }
 
     private fun initForSystemUI() {
-        loadClass("com.android.wm.shell.common.split.SplitUtilsImpl").declaredMethods.filter { !it.isStatic }
-            .createHooks {
-                before {
-                    it.thisObject.objectHelper().setObject("IS_CTS_MODE", true)
+        loadClass("com.android.wm.shell.common.split.DividerHandleView").declaredConstructors.createHooks {
+            after {
+                val instanceSplitUtilsStub =
+                    loadClass("com.android.wm.shell.common.split.SplitUtilsStub").classHelper()
+                        .invokeStaticMethodBestMatch("getInstance") ?: return@after
+                val mWidth = invokeMethodBestMatch(
+                    instanceSplitUtilsStub, "getHandlerViewWidth", null, it.thisObject
+                ) as Int
+                val mHeight = invokeMethodBestMatch(
+                    instanceSplitUtilsStub, "getHandlerViewHeight", null, it.thisObject
+                ) as Int
+                it.thisObject.objectHelper {
+                    setObject("mWidth", mWidth)
+                    setObject("mHeight", mHeight)
+                    setObject("mCurrentWidth", mWidth)
+                    setObject("mCurrentHeight", mHeight)
+                    setObject("mTouchingWidth", if (mWidth > mHeight) mWidth / 2 else mWidth)
+                    setObject("mTouchingHeight", if (mHeight > mWidth) mHeight / 2 else mHeight)
+                }
+            }
+        }
+        loadClass("com.android.wm.shell.common.split.SplitUtilsImpl").methodFinder()
+            .filterByName("getDividerView").first().createHook {
+                replace {
+                    val context = it.args[0] as Context? ?: return@replace null
+                    return@replace LayoutInflater.from(context)
+                        .inflate(layoutDockedStackDividerInCtsMode, null)
                 }
             }
         loadClass("com.android.wm.shell.common.split.SplitUtilsImpl").methodFinder()
