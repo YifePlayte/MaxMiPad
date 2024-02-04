@@ -1,4 +1,4 @@
-package com.yifeplayte.maxmipadinput.hook.hooks.android
+package com.yifeplayte.maxmipadinput.hook.hooks.singlepackage.android
 
 import android.os.Build
 import com.github.kyuubiran.ezxhelper.ClassUtils.invokeStaticMethodBestMatch
@@ -10,7 +10,8 @@ import com.yifeplayte.maxmipadinput.hook.hooks.BaseHook
 import com.yifeplayte.maxmipadinput.hook.utils.XSharedPreferences.getString
 
 object RemoveStylusBluetoothRestriction : BaseHook() {
-    override fun init() {
+    override val key = "remove_stylus_bluetooth_restriction"
+    override fun hook() {
         val isNew = Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU
         val clazzMiuiStylusDeviceListener = loadFirstClass(
             "com.miui.server.input.stylus.MiuiStylusDeviceListener",
@@ -29,7 +30,8 @@ object RemoveStylusBluetoothRestriction : BaseHook() {
     }
 
     private fun setTouchModeStylusEnable(isNew: Boolean) {
-        val driverVersion = getString("remove_stylus_bluetooth_restriction_driver_version", "2").toInt()
+        val driverVersion =
+            getString("remove_stylus_bluetooth_restriction_driver_version", "2").toInt()
         val flag: Int = if (isNew) (0x10 or driverVersion) else 1
         val instanceITouchFeature =
             invokeStaticMethodBestMatch(loadClass("miui.util.ITouchFeature"), "getInstance")!!

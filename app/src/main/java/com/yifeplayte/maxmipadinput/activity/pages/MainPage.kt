@@ -13,6 +13,7 @@ import cn.fkj233.ui.activity.view.TextSummaryV
 import cn.fkj233.ui.dialog.MIUIDialog
 import com.yifeplayte.maxmipadinput.R
 import com.yifeplayte.maxmipadinput.hook.PACKAGE_NAME_HOOKED
+import com.yifeplayte.maxmipadinput.utils.Build.IS_HYPER_OS
 import com.yifeplayte.maxmipadinput.utils.Terminal
 
 @SuppressLint("NonConstantResourceId")
@@ -118,7 +119,7 @@ class MainPage : BasePage() {
             },
             dataBindingRecv = bindingDisableFixedOrientation.getRecv(1)
         )
-        TextSummaryWithSwitch(
+        if (IS_HYPER_OS) TextSummaryWithSwitch(
             TextSummaryV(
                 textId = R.string.vertical_split_on_portrait
             ),

@@ -1,4 +1,4 @@
-package com.yifeplayte.maxmipadinput.hook.hooks.home
+package com.yifeplayte.maxmipadinput.hook.hooks.singlepackage.home
 
 import android.os.Build
 import android.view.InputDevice.SOURCE_TOUCHSCREEN
@@ -12,7 +12,8 @@ import com.github.kyuubiran.ezxhelper.finders.MethodFinder.`-Static`.methodFinde
 import com.yifeplayte.maxmipadinput.hook.hooks.BaseHook
 
 object FixDisableMultiFingerGestureFilter : BaseHook() {
-    override fun init() {
+    override val key = "fix_disable_multi_finger_gesture_filter"
+    override fun hook() {
         loadClass("com.miui.home.recents.GestureModeApp").methodFinder()
             .filterByName("isSupportGestureOperation").first().createHook {
                 before {

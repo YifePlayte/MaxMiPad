@@ -16,10 +16,17 @@ import com.github.kyuubiran.ezxhelper.ObjectUtils.getObjectOrNull
 import com.github.kyuubiran.ezxhelper.ObjectUtils.invokeMethodBestMatch
 import com.github.kyuubiran.ezxhelper.ObjectUtils.setObject
 import com.github.kyuubiran.ezxhelper.finders.MethodFinder.`-Static`.methodFinder
-import com.yifeplayte.maxmipadinput.hook.hooks.BaseHook
+import com.yifeplayte.maxmipadinput.hook.hooks.BaseMultiHook
+import com.yifeplayte.maxmipadinput.utils.Build.IS_HYPER_OS
 
 @SuppressLint("DiscouragedApi")
-object VerticalSplitOnPortrait : BaseHook() {
+object VerticalSplitOnPortrait : BaseMultiHook() {
+    override val key = "vertical_split_on_portrait"
+    override val isEnabled get() = IS_HYPER_OS and super.isEnabled
+    override val hooks = mapOf(
+        "com.android.systemui" to { systemUI() },
+        "com.miui.home" to { home() },
+    )
     private val boolConfigMiuiSplitFeatureEnable by lazy {
         appContext.resources.getIdentifier(
             "config_miui_split_feature_enable", "bool", hostPackageName
@@ -41,14 +48,7 @@ object VerticalSplitOnPortrait : BaseHook() {
         )
     }
 
-    override fun init() {
-        when (hostPackageName) {
-            "com.android.systemui" -> initForSystemUI()
-            "com.miui.home" -> initForHome()
-        }
-    }
-
-    private fun initForHome() {
+    private fun home() {
         loadClass("com.miui.home.launcher.common.Utilities").methodFinder()
             .filterByName("isPadDevice").first().createHook {
                 before { param ->
@@ -77,7 +77,7 @@ object VerticalSplitOnPortrait : BaseHook() {
             }
     }
 
-    private fun initForSystemUI() {
+    private fun systemUI() {
         loadClass("com.android.wm.shell.common.split.DividerHandleView").declaredConstructors.createHooks {
             after {
                 val instanceSplitUtilsStub =
