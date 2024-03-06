@@ -9,6 +9,7 @@
     <string name="done">OK</string>
     <string name="finished">Finished</string>
     <string name="fix_disable_multi_finger_gesture_filter">Fix \"Don\'t respond to three- and four-finger gestures\" function</string>
+    <string name="fix_disable_multi_finger_gesture_filter_tips">Controlled by both \"Home - Don\'t respond to three- and four-finger gestures\" and \"Game DND - Restrict screenshot gestures\"</string>
     <string name="ignore_stylus_key_gesture">Ignore stylus buttons gesture</string>
     <string name="ignore_stylus_key_gesture_tips">Ignore the long press gesture on the stylus buttons.</string>
     <string name="input">Input</string>

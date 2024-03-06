@@ -8,6 +8,7 @@
     <string name="done">确定</string>
     <string name="finished">运行完成</string>
     <string name="fix_disable_multi_finger_gesture_filter">修复“屏蔽三指、四指手势”功能</string>
+    <string name="fix_disable_multi_finger_gesture_filter_tips">同时受“桌面-屏蔽三指、四指手势”和“游戏防打扰-关闭三指截图”控制</string>
     <string name="ignore_stylus_key_gesture">忽略触控笔按键手势</string>
     <string name="ignore_stylus_key_gesture_tips">忽略触控笔按键的长按手势。</string>
     <string name="input">输入</string>

@@ -85,7 +85,8 @@ class MainPage : BasePage() {
         )
         TextSummaryWithSwitch(
             TextSummaryV(
-                textId = R.string.fix_disable_multi_finger_gesture_filter
+                textId = R.string.fix_disable_multi_finger_gesture_filter,
+                tipsId = R.string.fix_disable_multi_finger_gesture_filter_tips
             ),
             SwitchV("fix_disable_multi_finger_gesture_filter", false)
         )
