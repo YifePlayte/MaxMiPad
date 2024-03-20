@@ -22,7 +22,7 @@
     <string name="remove_stylus_bluetooth_restriction">Remove stylus bluetooth restriction</string>
     <string name="remove_stylus_bluetooth_restriction_driver_version">Driver version</string>
     <string name="remove_stylus_bluetooth_restriction_driver_version_tips">Driver version for removing stylus bluetooth restriction</string>
-    <string name="remove_stylus_bluetooth_restriction_tips">Make all compatible stylus work without the need of bluetooth connection to official stylus.</string>
+    <string name="remove_stylus_bluetooth_restriction_tips">Make all compatible stylus works without the need of bluetooth connection to official stylus.</string>
     <string name="restart_all_scope">Restart all scope</string>
     <string name="restart_all_scope_tips">Are you sure to restart all scope?</string>
     <string name="restore_esc">Restore ESC function</string>
