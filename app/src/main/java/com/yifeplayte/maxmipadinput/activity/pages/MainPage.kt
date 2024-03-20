@@ -66,6 +66,9 @@ class MainPage : BasePage() {
                 add("2") {
                     safeSP.putAny("remove_stylus_bluetooth_restriction_driver_version", "2")
                 }
+                add("3") {
+                    safeSP.putAny("remove_stylus_bluetooth_restriction_driver_version", "3")
+                }
             },
             dataBindingRecv = bindingRemoveStylusBluetoothRestriction.getRecv(1)
         )
