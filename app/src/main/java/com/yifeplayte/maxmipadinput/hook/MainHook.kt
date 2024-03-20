@@ -1,6 +1,7 @@
 package com.yifeplayte.maxmipadinput.hook
 
 import com.github.kyuubiran.ezxhelper.EzXHelper
+import com.yifeplayte.maxmipadinput.hook.hooks.multiple.EnableStylusInputMethod
 import com.yifeplayte.maxmipadinput.hook.hooks.multiple.SetGestureNeedFingerNumTo4
 import com.yifeplayte.maxmipadinput.hook.hooks.multiple.VerticalSplitOnPortrait
 import com.yifeplayte.maxmipadinput.hook.hooks.singlepackage.Android
@@ -16,6 +17,7 @@ private val singlePackagesHooked = setOf(
     Home,
 )
 private val multiPackagesHooked = setOf(
+    EnableStylusInputMethod,
     SetGestureNeedFingerNumTo4,
     VerticalSplitOnPortrait,
 )

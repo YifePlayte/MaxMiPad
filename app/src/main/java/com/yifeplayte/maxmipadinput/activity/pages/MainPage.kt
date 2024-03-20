@@ -74,6 +74,14 @@ class MainPage : BasePage() {
         )
         TextSummaryWithSwitch(
             TextSummaryV(
+                textId = R.string.enable_stylus_input_method,
+                tipsId = R.string.enable_stylus_input_method_tips
+            ),
+            SwitchV("enable_stylus_input_method", false),
+            dataBindingRecv = bindingRemoveStylusBluetoothRestriction.getRecv(1)
+        )
+        TextSummaryWithSwitch(
+            TextSummaryV(
                 textId = R.string.ignore_stylus_key_gesture,
                 tipsId = R.string.ignore_stylus_key_gesture_tips
             ),

@@ -6,6 +6,8 @@
     <string name="disable_fixed_orientation_scope_tips">重启后生效</string>
     <string name="disable_fixed_orientation_tips">针对部分应用禁用横屏优化</string>
     <string name="done">确定</string>
+    <string name="enable_stylus_input_method">去除随手写蓝牙限制</string>
+    <string name="enable_stylus_input_method_tips">无需连接小米灵感触控笔的蓝牙即可使用随手写。</string>
     <string name="finished">运行完成</string>
     <string name="fix_disable_multi_finger_gesture_filter">修复“屏蔽三指、四指手势”功能</string>
     <string name="fix_disable_multi_finger_gesture_filter_tips">同时受“桌面-屏蔽三指、四指手势”和“游戏防打扰-关闭三指截图”控制</string>

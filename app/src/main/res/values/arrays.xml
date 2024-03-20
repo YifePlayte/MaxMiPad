@@ -2,7 +2,11 @@
 <resources>
     <string-array name="xposedscope">
         <item>android</item>
+        <item>com.android.settings</item>
         <item>com.android.systemui</item>
+        <item>com.miui.handwriting</item>
         <item>com.miui.home</item>
+        <item>com.miui.securitycenter</item>
+        <item>com.miui.securitycore</item>
     </string-array>
 </resources>

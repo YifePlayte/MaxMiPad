@@ -7,6 +7,8 @@
     <string name="disable_fixed_orientation_scope_tips">Take effect after reboot</string>
     <string name="disable_fixed_orientation_tips">Disable some app\'s fixed orientation</string>
     <string name="done">OK</string>
+    <string name="enable_stylus_input_method">Remove Scribe bluetooth restriction</string>
+    <string name="enable_stylus_input_method_tips">Make Scribe works without the need of bluetooth connection to official stylus.</string>
     <string name="finished">Finished</string>
     <string name="fix_disable_multi_finger_gesture_filter">Fix \"Don\'t respond to three- and four-finger gestures\" function</string>
     <string name="fix_disable_multi_finger_gesture_filter_tips">Controlled by both \"Home - Don\'t respond to three- and four-finger gestures\" and \"Game DND - Restrict screenshot gestures\"</string>
