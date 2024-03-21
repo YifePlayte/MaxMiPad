@@ -12,10 +12,12 @@ Provide some enhancements to Mi Pad
 - 关闭Magic Pointer / No Magic Pointer
 - 恢复ESC键功能 / Restore ESC function
 - 去除触控笔蓝牙限制 / Remove stylus bluetooth restriction
+- 去除随手写蓝牙限制 / Remove Scribe bluetooth restriction
 - 忽略触控笔按键手势 / Ignore stylus buttons gesture
 - 交换手势所需的手指数量 / Swap the number of fingers required for gestures
-- 禁用应用内系统桌面多指手势 / Disable multi-finger gesture from system launcher in apps
+- 修复“屏蔽三指、四指手势”功能 / Fix "Don't respond to three- and four-finger gestures" function
 - 禁用固定屏幕方向 / Disable fixed orientation
+- 竖屏时上下分屏 / Split screen top and bottom on portrait
 
 ---
 
