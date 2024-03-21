@@ -20,7 +20,8 @@ object EnableStylusInputMethod : BaseMultiHook() {
         "com.miui.handwriting" to { hookForHandWriting() },
         "com.android.settings" to { hookForSettings() },
         "com.miui.securitycenter" to { hookForSecurityCenter() },
-        "com.miui.securitycore" to { hookForSecurityCore() },
+        "com.miui.securitycore" to { hookForMiInput() },
+        "com.miui.miinput" to { hookForMiInput() },
     )
 
     private fun hookForAndroid() {
@@ -57,13 +58,13 @@ object EnableStylusInputMethod : BaseMultiHook() {
         }
     }
 
-    private fun hookForSecurityCore() {
+    private fun hookForMiInput() {
         dexKitBridge.findMethod {
             matcher {
                 usingStrings = listOf("isXiaomiStylus")
                 returnType = "boolean"
             }
-        }.single().getMethodInstance(safeClassLoader).createHook {
+        }.singleOrNull()?.getMethodInstance(safeClassLoader)?.createHook {
             returnConstant(true)
         }
     }
