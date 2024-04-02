@@ -6,6 +6,5 @@ import com.yifeplayte.maxmipadinput.R
 
 @SuppressLint("NonConstantResourceId")
 @BMPage(key = "DisableFixedOrientationPage", titleId = R.string.disable_fixed_orientation_scope)
-class DisableFixedOrientationPage : BaseSelectApplicationsPage() {
-    override val key = "should_disable_fixed_orientation_list"
-}
+class DisableFixedOrientationPage :
+    BaseSelectApplicationsPage("should_disable_fixed_orientation_list")
