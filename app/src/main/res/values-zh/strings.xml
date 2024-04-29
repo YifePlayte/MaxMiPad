@@ -1,4 +1,5 @@
 <resources>
+    <string name="android_r_tips">在 Android 11 上，只有去除触控笔蓝牙限制可用，其余功能恕无法维护。</string>
     <string name="cancel">取消</string>
     <string name="clear">清空</string>
     <string name="disable_fixed_orientation">禁用固定屏幕方向</string>

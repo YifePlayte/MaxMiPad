@@ -1,4 +1,5 @@
 <resources>
+    <string name="android_r_tips">On Android 11, only the removal of stylus bluetooth restriction is available, other functions cannot be maintained.</string>
     <string name="app_name" translatable="false">MaxMiPad</string>
     <string name="cancel">Cancel</string>
     <string name="clear">Clear</string>

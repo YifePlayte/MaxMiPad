@@ -20,20 +20,32 @@ import com.yifeplayte.maxmipadinput.utils.Terminal
 @BMMainPage(titleId = R.string.app_name)
 class MainPage : BasePage() {
     override fun onCreate() {
+        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.R) {
+            TitleText(textId = R.string.android_r_tips)
+            TextSummaryWithSwitch(
+                TextSummaryV(
+                    textId = R.string.remove_stylus_bluetooth_restriction,
+                    tipsId = R.string.remove_stylus_bluetooth_restriction_tips
+                ),
+                SwitchV("remove_stylus_bluetooth_restriction", false)
+            )
+            return
+        }
+
         TitleText(textId = R.string.input)
         TextSummaryWithSwitch(
             TextSummaryV(
                 textId = R.string.no_magic_pointer,
                 tipsId = R.string.no_magic_pointer_tips
             ),
-            SwitchV("no_magic_pointer", true)
+            SwitchV("no_magic_pointer", false)
         )
         TextSummaryWithSwitch(
             TextSummaryV(
                 textId = R.string.restore_esc,
                 tipsId = R.string.restore_esc_tips
             ),
-            SwitchV("restore_esc", true)
+            SwitchV("restore_esc", false)
         )
         val bindingRemoveStylusBluetoothRestriction =
             GetDataBinding({
@@ -50,7 +62,7 @@ class MainPage : BasePage() {
             ),
             SwitchV(
                 key = "remove_stylus_bluetooth_restriction",
-                defValue = true,
+                defValue = false,
                 dataBindingSend = bindingRemoveStylusBluetoothRestriction.bindingSend
             )
         )
@@ -105,7 +117,7 @@ class MainPage : BasePage() {
         TitleText(textId = R.string.screen)
         val bindingDisableFixedOrientation =
             GetDataBinding({
-                safeSP.getBoolean("disable_fixed_orientation", true)
+                safeSP.getBoolean("disable_fixed_orientation", false)
             }) { view, flags, data ->
                 when (flags) {
                     1 -> view.visibility = if (data as Boolean) View.VISIBLE else View.GONE
@@ -118,7 +130,7 @@ class MainPage : BasePage() {
             ),
             SwitchV(
                 key = "disable_fixed_orientation",
-                defValue = true,
+                defValue = false,
                 dataBindingSend = bindingDisableFixedOrientation.bindingSend
             )
         )

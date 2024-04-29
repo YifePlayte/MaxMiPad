@@ -14,7 +14,7 @@ android {
 
     defaultConfig {
         applicationId = "com.yifeplayte.maxmipadinput"
-        minSdk = 31
+        minSdk = 30
         targetSdk = 34
         versionCode = 21
         versionName = "1.6.1"
