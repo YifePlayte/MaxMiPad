@@ -49,7 +49,7 @@ class MainPage : BasePage() {
         )
         val bindingRemoveStylusBluetoothRestriction =
             GetDataBinding({
-                safeSP.getBoolean("remove_stylus_bluetooth_restriction", true)
+                safeSP.getBoolean("remove_stylus_bluetooth_restriction", false)
             }) { view, flags, data ->
                 when (flags) {
                     1 -> view.visibility = if (data as Boolean) View.VISIBLE else View.GONE
