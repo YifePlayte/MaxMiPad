@@ -53,4 +53,4 @@ Provide some enhancements to Mi Pad
 
 ### 捐赠 / Sponsor
 
-[爱发电 / AFDIAN](https://afdian.net/a/YifePlayte)
+[爱发电 / AFDIAN](https://afdian.com/a/YifePlayte)
